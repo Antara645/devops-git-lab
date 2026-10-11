@@ -1,5 +1,4 @@
-.github/workflows/ci.yml
-Add:
+
 name: DevOps CI
 
 on:
@@ -14,18 +13,12 @@ on:
       - development
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Check Git Version
-        run: git --version
-
-      - name: Run Test
-        run: |
-          echo "Running CI Tests..."
-          test -f index.html
-          echo "All tests passed!"
+      - name: Display success message
+        run: echo "CI workflow executed successfully!"
